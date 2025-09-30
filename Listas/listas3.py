@@ -17,7 +17,7 @@ promedio = suma / len(velocidad)
 print(f"velocidad promedio: {promedio}")
 
 # Imprimir velocidades que superan el promedio
-print()
+
 for v in velocidad:
     if v > promedio:
         print(v)
