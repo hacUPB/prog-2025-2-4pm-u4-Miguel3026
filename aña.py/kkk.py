@@ -1,4 +1,3 @@
-
 # Función para simular cada fase del vuelo
 
 def simular_fase(nombre_fase, tiempo_fase, consumo_fase, combustible_act, tiempo_total, intervalo, min_seguridad):
@@ -54,7 +53,7 @@ def ejercicio_combustible():
     # Resultados finales
     print("\nFIN DEL VUELO")
     print(f"Tiempo total: {tiempo_total} minutos")
-    print(f"Combustible final: {combustible_act} L")
+    print(f"Combustible final: {combustible_act:.2f} L")
 
     if combustible_act >= min_seguridad:
         print("Resultado: Vuelo exitoso. Aterrizaje con reserva suficiente.")
