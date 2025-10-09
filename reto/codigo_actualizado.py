@@ -1,6 +1,3 @@
-
-# Función para simular cada fase del vuelo
-
 def simular_fase(nombre_fase, tiempo_fase, consumo_fase, combustible_act, tiempo_total, intervalo, min_seguridad):
     for minuto in range(0, tiempo_fase, intervalo):
         delta_combustible = consumo_fase * intervalo
@@ -17,41 +14,43 @@ def simular_fase(nombre_fase, tiempo_fase, consumo_fase, combustible_act, tiempo
     
     return combustible_act, tiempo_total, "Continuar"
 
-# Función principal
+
+
+# Función principal del ejercicio
+
 def ejercicio_combustible():
-    
-    consumo_ascenso = 75
-    consumo_crucero = 50
-    consumo_descenso = 37
     intervalo = 5
     min_seguridad = 1500
 
+    # Diccionario con consumo y tiempo por fase
+    fases_datos = {
+        "ascenso": {"consumo": 75, "tiempo": 0},
+        "crucero": {"consumo": 50, "tiempo": 0},
+        "descenso": {"consumo": 37, "tiempo": 0}
+    }
+
+    fases_orden = ["ascenso", "crucero", "descenso"]
+
     print("EJERCICIO: CONSUMO DE COMBUSTIBLE")
     combustible_ini = float(input("Ingrese la cantidad inicial de combustible (litros): "))
-    t_ascenso = int(input("Ingrese la duración del ascenso (minutos): "))
-    t_crucero = int(input("Ingrese la duración del crucero (minutos): "))
-    t_descenso = int(input("Ingrese la duración del descenso (minutos): "))
+
+    for fase in fases_orden:
+        fases_datos[fase]["tiempo"] = int(input(f"Ingrese la duración del {fase} (minutos): "))
 
     combustible_act = combustible_ini
     tiempo_total = 0
 
-    # Simulación de fases
-    combustible_act, tiempo_total, estado = simular_fase("ascenso", t_ascenso, consumo_ascenso,
-                                                         combustible_act, tiempo_total, intervalo, min_seguridad)
-    if estado == "Vuelo fallido":
-        return
+    for fase in fases_orden:
+        consumo = fases_datos[fase]["consumo"]
+        tiempo = fases_datos[fase]["tiempo"]
 
-    combustible_act, tiempo_total, estado = simular_fase("crucero", t_crucero, consumo_crucero,
-                                                         combustible_act, tiempo_total, intervalo, min_seguridad)
-    if estado == "Vuelo fallido":
-        return
+        combustible_act, tiempo_total, estado = simular_fase(
+            fase, tiempo, consumo, combustible_act, tiempo_total, intervalo, min_seguridad
+        )
 
-    combustible_act, tiempo_total, estado = simular_fase("descenso", t_descenso, consumo_descenso,
-                                                         combustible_act, tiempo_total, intervalo, min_seguridad)
-    if estado == "Vuelo fallido":
-        return
+        if estado == "Vuelo fallido":
+            return
 
-    # Resultados 
     print("FIN DEL VUELO")
     print(f"Tiempo total: {tiempo_total} minutos")
     print(f"Combustible final: {combustible_act} L")
@@ -62,5 +61,6 @@ def ejercicio_combustible():
         print("Resultado: Vuelo completado en emergencia. Aterrizaje con menos de la reserva mínima.")
     else:
         print("Resultado: Vuelo fallido. Sin combustible antes de aterrizar.")
+
 if __name__ == "__main__":
     ejercicio_combustible()
