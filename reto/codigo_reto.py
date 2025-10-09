@@ -19,7 +19,7 @@ def simular_fase(nombre_fase, tiempo_fase, consumo_fase, combustible_act, tiempo
 
 # Función principal
 def ejercicio_combustible():
-    #
+    
     consumo_ascenso = 75
     consumo_crucero = 50
     consumo_descenso = 37
@@ -51,8 +51,8 @@ def ejercicio_combustible():
     if estado == "Vuelo fallido":
         return
 
-    # Resultados finales
-    print("\nFIN DEL VUELO")
+    # Resultados 
+    print("FIN DEL VUELO")
     print(f"Tiempo total: {tiempo_total} minutos")
     print(f"Combustible final: {combustible_act} L")
 
@@ -62,5 +62,5 @@ def ejercicio_combustible():
         print("Resultado: Vuelo completado en emergencia. Aterrizaje con menos de la reserva mínima.")
     else:
         print("Resultado: Vuelo fallido. Sin combustible antes de aterrizar.")
-
-
+if __name__ == "__main__":
+    ejercicio_combustible()
