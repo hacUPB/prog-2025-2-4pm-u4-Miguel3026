@@ -159,3 +159,6 @@ El código viejo usaba variables separadas para cada fase, mientras que el códi
 - Un diccionario ```(fases_datos)``` para guardar los datos de consumo y tiempo.
 
 - Una lista ```(fases_orden)``` para recorrer las fases en orden.
+
+## Declración de IA
+ Se utilizó la herramienta de inteligencia artificial ChatGPT como apoyo para la revision, reajustes del codigo y explicar conceptos.
