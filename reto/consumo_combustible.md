@@ -105,27 +105,25 @@ if __name__ == "__main__":
     intervalo = 5
     min_seguridad = 1500
 
-    # Diccionario con consumo y tiempo por fase
+    # Diccionario 
     fases_datos = {
         "ascenso": {"consumo": 75, "tiempo": 0},
         "crucero": {"consumo": 50, "tiempo": 0},
         "descenso": {"consumo": 37, "tiempo": 0}
     }
 
-    # Lista con el orden de las fases
+    # Lista 
     fases_orden = ["ascenso", "crucero", "descenso"]
 
     print("EJERCICIO: CONSUMO DE COMBUSTIBLE")
     combustible_ini = float(input("Ingrese la cantidad inicial de combustible (litros): "))
 
-    # Pedir tiempos por fase de forma automática
     for fase in fases_orden:
         fases_datos[fase]["tiempo"] = int(input(f"Ingrese la duración del {fase} (minutos): "))
 
     combustible_act = combustible_ini
     tiempo_total = 0
 
-    # Recorrer fases dinámicamente
     for fase in fases_orden:
         consumo = fases_datos[fase]["consumo"]
         tiempo = fases_datos[fase]["tiempo"]
@@ -160,5 +158,5 @@ El código viejo usaba variables separadas para cada fase, mientras que el códi
 
 - Una lista ```(fases_orden)``` para recorrer las fases en orden.
 
-## Declración de IA
+## Declaración de IA
  Se utilizó la herramienta de inteligencia artificial ChatGPT como apoyo para la revision, reajustes del codigo y explicar conceptos.
