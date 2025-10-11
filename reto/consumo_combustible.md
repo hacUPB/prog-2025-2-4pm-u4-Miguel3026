@@ -159,4 +159,4 @@ El código viejo usaba variables separadas para cada fase, mientras que el códi
 - Una lista ```(fases_orden)``` para recorrer las fases en orden.
 
 ## Declaración de IA
- Se utilizó la herramienta de inteligencia artificial ChatGPT como apoyo para la revision, reajustes del codigo y explicar conceptos.
+ Se utilizó la herramienta de inteligencia artificial ChatGPT y Copilot como apoyo para la revision, reajustes del codigo y explicar conceptos.
