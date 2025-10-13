@@ -4,4 +4,5 @@
 Nombre: Miguel Angel Mejia Loaiza
 ID.: 000257893
 ## Descripción del repositorio
-Reemplace estas líneas por la descripción de su repositorio
+Este repositorio contiene las actividades desarrolladas en la Unidad 4, enfocadas en comprender y aplicar las principales estructuras de datos de Python.
+Cada actividad permite ver distintos tipos de colecciones, optimizando el almacenamiento de datos y acceso a la información dentro de los diferentes programas.
