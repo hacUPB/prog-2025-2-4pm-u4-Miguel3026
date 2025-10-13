@@ -88,6 +88,25 @@ def control_combustible():
     print(f"El registro se detuvo al minuto {tiempo}, cuando el nivel bajó a {nivel}%.")
     print(f"Tiempo total de operación: {tiempo} minutos.")
     
+#Detección de turbulencia en trayecto
+import random
+def detector_turbulencias():
+        print("Detección de turbulencias")
+        umbral = 1.5 
+        turbulencias = 0  
+        duracion = 120  
+        for segundo in range(1, duracion + 1):
+            aceleracion = round(random.uniform(0.8, 1.8), 2)  
+
+        print(f"Segundo {segundo}: {aceleracion} g")
+
+        if aceleracion > umbral:
+            print("Turbulencia detectada en este instante.")
+            turbulencias += 1
+
+        print("Resultado final")
+        print(f"Total de turbulencias detectadas: {turbulencias}")
+
 
 
 def salir():
@@ -104,8 +123,9 @@ def menu():
         print("4. Ejercicio temperatura")
         print("5. Ejercicio altitudes")
         print("6. Ejercicio control de combustible")
-        print("7. Salir")
-        opcion = int(input("Ingrese el numero del ejercicio (1-7):"))
+        print("7. Detección de turbulencias")
+        print("8. Salir")
+        opcion = int(input("Ingrese el numero del ejercicio (1-8):"))
         if opcion == 1:
          ejercicio_binario()
         elif opcion == 2:
@@ -119,6 +139,8 @@ def menu():
         elif opcion == 6:
             control_combustible()
         elif opcion == 7:
+            detector_turbulencias()
+        elif opcion == 8:
             salir()
         break
         
