@@ -72,8 +72,22 @@ def registro_altitudes():
     for i, alt in enumerate(altitudes):
         print(f"Minuto {i*10}: {alt} pies")
         
-    
+        
+# Ejercicio consumo de combustible
+def control_combustible():
+    print("Control de combustible en pruebas")
 
+    tiempo = 0  # minutos
+    nivel = 100  # porcentaje inicial del tanque
+
+    while nivel >= 10:
+        print(f"Minuto {tiempo}: nivel de combustible = {nivel}%")
+        nivel = float(input("Ingrese el nivel de combustible actual (%): "))
+        tiempo += 1
+
+    print(f"El registro se detuvo al minuto {tiempo}, cuando el nivel bajó a {nivel}%.")
+    print(f"Tiempo total de operación: {tiempo} minutos.")
+    
 
 
 def salir():
@@ -89,6 +103,7 @@ def menu():
         print("3. Ejercicio peso")
         print("4. Ejercicio temperatura")
         print("5. Ejercicio altitudes")
+        print("6. Ejercicio control de combustible")
         print("7. Salir")
         opcion = int(input("Ingrese el numero del ejercicio (1-7):"))
         if opcion == 1:
@@ -102,6 +117,8 @@ def menu():
         elif opcion == 5:
             registro_altitudes()
         elif opcion == 6:
+            control_combustible()
+        elif opcion == 7:
             salir()
         break
         
